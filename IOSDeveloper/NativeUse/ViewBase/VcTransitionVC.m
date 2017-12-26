@@ -46,9 +46,13 @@
 }
 
 - (void)dismissAction {
-    [self dismissViewControllerAnimated:NO completion:^{
-        NSLog(@"Dismiss Finish");
-    }];
+    if (self.navigationController) {
+        [self.navigationController popViewControllerAnimated:NO];
+    } else {
+        [self dismissViewControllerAnimated:NO completion:^{
+            NSLog(@"Dismiss Finish");
+        }];
+    }
 }
 
 @end

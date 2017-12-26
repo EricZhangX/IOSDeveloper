@@ -9,6 +9,8 @@
 #import "NativeUseVC.h"
 
 #import "VcStateVC.h"
+#import "ScrollViewVC.h"
+#import "TableVC.h"
 
 @interface NativeUseVC ()
 
@@ -65,12 +67,30 @@
     UIViewController *vc = nil;
     if ([title isEqualToString:@"VcState"]) {
         vc = [[VcStateVC alloc] init];
+    } else if ([title isEqualToString:@"ScrollView"]) {
+        vc = [[ScrollViewVC alloc] init];
+    } else if ([title isEqualToString:@"TableView"]) {
+        vc = [[TableVC alloc] init];
     }
     
     if (vc) {
         vc.navigationItem.title = title;
         [self.navigationController pushViewController:vc animated:YES];
     }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSDictionary *dic = self.nativeItems[section];
+    NSString *key = [[dic allKeys] firstObject];
+    return key;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 32.f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.f;
 }
    
 #pragma mark - 懒加载
@@ -79,12 +99,14 @@
         _nativeItems = @[
                          @{@"基础篇" : @[
                                    @"VcState",
+                                   @"ScrollView",
+                                   @"TableView"
                                    ]},
                          @{@"进阶篇" : @[
-                                   @"haha",
+                                   @"...",
                                    ]},
                          @{@"基础篇" : @[
-                                   @"ViewController",
+                                   @"....",
                                    ]}
                          ];
     }

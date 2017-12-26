@@ -23,12 +23,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     UIBarButtonItem *pushBtn = [[UIBarButtonItem alloc] initWithTitle:@"Push" style:UIBarButtonItemStyleDone target:self action:@selector(pushAction)];
     UIBarButtonItem *presentBtn = [[UIBarButtonItem alloc] initWithTitle:@"Present" style:UIBarButtonItemStyleDone target:self action:@selector(presentAction)];
     
     self.navigationItem.rightBarButtonItems = @[pushBtn, presentBtn];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
