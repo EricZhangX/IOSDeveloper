@@ -17,6 +17,7 @@
 		7D6D51641FF2336800413323 /* VcTransitionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6D51631FF2336800413323 /* VcTransitionVC.m */; };
 		7D6D51671FF23B7800413323 /* ScrollViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6D51661FF23B7800413323 /* ScrollViewVC.m */; };
 		7D6D516A1FF23DF500413323 /* TableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6D51691FF23DF500413323 /* TableVC.m */; };
+		7D6D516E1FF2419800413323 /* LayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6D516D1FF2419800413323 /* LayerVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		7D6D51661FF23B7800413323 /* ScrollViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollViewVC.m; sourceTree = "<group>"; };
 		7D6D51681FF23DF500413323 /* TableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableVC.h; sourceTree = "<group>"; };
 		7D6D51691FF23DF500413323 /* TableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableVC.m; sourceTree = "<group>"; };
+		7D6D516C1FF2419800413323 /* LayerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LayerVC.h; sourceTree = "<group>"; };
+		7D6D516D1FF2419800413323 /* LayerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LayerVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,7 @@
 			children = (
 				7D0A75841FF2221400F4AE3B /* NativeUseVC.h */,
 				7D0A75851FF2221400F4AE3B /* NativeUseVC.m */,
+				7D6D516B1FF2416A00413323 /* ViewAdvanced */,
 				7D6D51611FF232FF00413323 /* ViewBase */,
 			);
 			path = NativeUse;
@@ -121,6 +125,15 @@
 				7D6D51691FF23DF500413323 /* TableVC.m */,
 			);
 			path = ViewBase;
+			sourceTree = "<group>";
+		};
+		7D6D516B1FF2416A00413323 /* ViewAdvanced */ = {
+			isa = PBXGroup;
+			children = (
+				7D6D516C1FF2419800413323 /* LayerVC.h */,
+				7D6D516D1FF2419800413323 /* LayerVC.m */,
+			);
+			path = ViewAdvanced;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +209,7 @@
 			files = (
 				7D0A75861FF2221400F4AE3B /* NativeUseVC.m in Sources */,
 				7D6D515C1FF2301900413323 /* VcStateVC.m in Sources */,
+				7D6D516E1FF2419800413323 /* LayerVC.m in Sources */,
 				7D0A757C1FF220C800F4AE3B /* main.m in Sources */,
 				7D6D51641FF2336800413323 /* VcTransitionVC.m in Sources */,
 				7D6D51671FF23B7800413323 /* ScrollViewVC.m in Sources */,

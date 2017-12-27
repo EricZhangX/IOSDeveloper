@@ -12,6 +12,8 @@
 #import "ScrollViewVC.h"
 #import "TableVC.h"
 
+#import "LayerVC.h"
+
 @interface NativeUseVC ()
 
 @property (nonatomic, strong) NSArray *nativeItems;
@@ -57,6 +59,19 @@
 
 
 #pragma mark - UITableViewDelegate
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSDictionary *dic = self.nativeItems[section];
+    NSString *key = [[dic allKeys] firstObject];
+    return key;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 32.f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.f;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *dic = self.nativeItems[indexPath.section];
@@ -72,6 +87,10 @@
     } else if ([title isEqualToString:@"TableView"]) {
         vc = [[TableVC alloc] init];
     }
+    //进阶篇
+    else if ([title isEqualToString:@"Layer"]) {
+        vc = [[LayerVC alloc] init];
+    }
     
     if (vc) {
         vc.navigationItem.title = title;
@@ -79,19 +98,7 @@
     }
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    NSDictionary *dic = self.nativeItems[section];
-    NSString *key = [[dic allKeys] firstObject];
-    return key;
-}
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 32.f;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0.f;
-}
    
 #pragma mark - 懒加载
 - (NSArray *)nativeItems {
@@ -103,7 +110,9 @@
                                    @"TableView"
                                    ]},
                          @{@"进阶篇" : @[
-                                   @"...",
+                                   @"Layer",
+                                   @"Touch",
+                                   @"Gesture"
                                    ]},
                          @{@"基础篇" : @[
                                    @"....",
